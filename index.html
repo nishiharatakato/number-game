@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>3桁数字あてゲーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>AIに勝とう！3桁数字あてゲーム</h1>
+
+  <!-- ルール表示 -->
+  <div id="rules">
+  <h2>ルール</h2>
+  <ul>
+    <li>答えは「0〜9の数字3桁（重複なし）」です。</li>
+    <li>プレイヤーとCPUが交互に数字を入力し、ヒントをもとに答えを推測します。</li>
+    <li>ヒント記号の意味：</li>
+    <ul>
+      <li>◎ → 数字と位置が正しい</li>
+      <li>○ → 数字は正しいが位置が違う</li>
+      <li>× → 数字が含まれていない</li>
+    </ul>
+    <li>先に「◎◎◎」を揃えた方が勝利です。</li>
+    <li>リセットボタンで新しいゲームを開始できます。</li>
+  </ul>
+</div>
+
+  <!-- ゲーム入力欄 -->
+  <input type="text" id="guessInput" maxlength="3">
+  <button id="guessBtn">判定</button>
+  <button id="resetBtn">リセット</button>
+
+  <p id="message"></p>
+
+  <div id="historyBox">
+    <h2>履歴</h2>
+    <table id="history">
+      <tr>
+        <th>プレイヤー</th>
+        <th>入力</th>
+        <th>判定</th>
+      </tr>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <script src="script.js"></script>
+</body>
+</html>

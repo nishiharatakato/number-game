@@ -1,0 +1,128 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 50px;
+}
+
+/* タイトル */
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ルール表示 */
+#rules {
+  border: 2px solid #333;
+  padding: 20px;
+  width: 380px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+#rules h2 {
+  margin-top: 0;
+  color: #444;
+}
+
+#rules ul {
+  margin: 5px 0 0 20px;
+  padding: 0;
+}
+
+#rules ul ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+/* 入力欄とボタン */
+input#guessInput {
+  width: 60px;
+  font-size: 20px;
+  text-align: center;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+button#guessBtn {
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button#guessBtn:hover {
+  background-color: #d32f2f;
+}
+
+button#resetBtn {
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button#resetBtn:hover {
+  background-color: #45a049;
+}
+
+
+/* メッセージ表示 */
+#message {
+  font-size: 18px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ゲームクリア用 */
+#message.win {
+  color: gold;
+  font-size: 28px;
+  text-shadow: 2px 2px 4px #000;
+  animation: pop 0.6s ease;
+}
+
+/* ポップアニメーション */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+/* 履歴リスト */
+#historyBox {
+    font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#history {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 300px;
+}
+
+#history th, #history td {
+  border: 1px solid #333;
+  padding: 6px 10px;
+  text-align: center;
+  font-family: monospace;
+}
+
+#history th {
+  background-color: #eee;
+}
