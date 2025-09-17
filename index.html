@@ -13,7 +13,7 @@
   <h2>ルール</h2>
   <ul>
     <li>答えは「0〜9の数字3桁（重複なし）」です。</li>
-    <li>プレイヤーとCPUが交互に数字を入力し、ヒントをもとに答えを推測します。</li>
+    <li>あなたとCPUが交互に数字を入力し、ヒントをもとに答えを推測します。</li>
     <li>ヒント記号の意味：</li>
     <ul>
       <li>◎ → 数字と位置が正しい</li>
@@ -30,6 +30,11 @@
   <button id="guessBtn">判定</button>
   <button id="resetBtn">リセット</button>
 
+<div id="mode-select" style="margin-top:12px;">
+  <label><input type="radio" name="mode" value="easy" checked> イージー</label>
+  <label style="margin-left:10px;"><input type="radio" name="mode" value="hard"> ハード</label>
+</div>
+
   <p id="message"></p>
 
   <div id="historyBox">
@@ -42,10 +47,6 @@
       </tr>
     </table>
   </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
 
   <script src="script.js"></script>
 </body>
