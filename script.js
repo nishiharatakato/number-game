@@ -111,7 +111,7 @@ document.getElementById('guessBtn').addEventListener('click', function() {
 // --- CPUのターン（mode によって分岐） ---
 function cpuTurn() {
   let guess;
-  if (document.querySelector('input[name="mode"]:checked').value === 'easy') {
+  if (mode === 'easy') {
     guess = cpuGuessEasy();
   } else {
     guess = cpuGuessHard();
@@ -145,7 +145,7 @@ function cpuGuessEasy() {
 }
 
 function cpuGuessHard() {
-  // 3桁の全組み合わせ（0-9, 重複なし）
+  // 4桁の全組み合わせ（0-9, 重複なし）
   let candidates = [];
   const digits = ['0','1','2','3','4','5','6','7','8','9'];
   for (let i=0; i<digits.length; i++) {
@@ -226,4 +226,9 @@ document.getElementById('resetBtn').addEventListener('click', function() {
   turn = 'player'; 
   cpuAttempts = 0; 
   playerAttempts = 0; 
+
+  historyData = [];
+
+  const checked = document.querySelector('input[name="mode"]:checked');
+  if (checked) mode = checked.value;
 });

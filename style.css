@@ -160,6 +160,11 @@ button#resetBtn:hover {
 
   #history {
     width: 100%;
-    font-size: 14px;
+    font-size: 20px;
+  }
+
+  #historyBox h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
   }
 }
