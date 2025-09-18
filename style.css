@@ -126,3 +126,31 @@ button#resetBtn:hover {
 #history th {
   background-color: #eee;
 }
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  #rules {
+    width: 90%;
+    padding: 15px;
+  }
+
+  input#guessInput {
+    width: 50px;
+    font-size: 18px;
+  }
+
+  button#guessBtn, button#resetBtn {
+    width: 45%;
+    font-size: 16px;
+    padding: 8px 0;
+    margin-top: 5px;
+  }
+
+  #history {
+    width: 95%;
+    font-size: 14px;
+  }
+}

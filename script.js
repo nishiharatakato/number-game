@@ -56,7 +56,7 @@ function showWinMessage(text, isPlayer = true) {
 function generateAnswer() {
   let digits = ['0','1','2','3','4','5','6','7','8','9'];
   let result = '';
-  for (let i=0; i<3; i++) {
+  for (let i=0; i<4; i++) {
     let idx = Math.floor(Math.random() * digits.length);
     result += digits[idx];
     digits.splice(idx, 1);
@@ -67,7 +67,7 @@ function generateAnswer() {
 // 判定関数 
 function getHint(guess) { 
   let hint = ''; 
-  for (let i=0; i<3; i++) { 
+  for (let i=0; i<4; i++) { 
     if (guess[i] === answer[i]) { 
       hint += '◎'; 
     } else if (answer.includes(guess[i])) { 
@@ -84,8 +84,8 @@ document.getElementById('guessBtn').addEventListener('click', function() {
   if (turn !== 'player') return; // CPUのターン中は無視 
 
   const inputEl = document.getElementById('guessInput'); 
-  const guess = inputEl.value; if (guess.length !== 3) {
-     alert("3桁の数字を入力してください"); 
+  const guess = inputEl.value; if (guess.length !== 4) {
+     alert("4桁の数字を入力してください"); 
      return; 
   }
 
@@ -93,7 +93,7 @@ document.getElementById('guessBtn').addEventListener('click', function() {
   const hint = getHint(guess); 
   addHistory('あなた', guess, hint);
 
-  if (hint === '◎◎◎') { 
+  if (hint === '◎◎◎◎') { 
     showWinMessage("🎉 あなたの勝利！おめでとう！ 🎉", true); 
     return; 
   }
@@ -121,7 +121,7 @@ function cpuTurn() {
   const hint = getHint(guess);
   addHistory('CPU', guess, hint);
 
-  if (hint === '◎◎◎') {
+  if (hint === '◎◎◎◎') {
     showWinMessage("💻 CPUの勝利！", false);
     turn = '';
     return;
@@ -136,7 +136,7 @@ function cpuTurn() {
 function cpuGuessEasy() {
   let digits = ['0','1','2','3','4','5','6','7','8','9'];
   let guess = '';
-  while (guess.length < 3) {
+  while (guess.length < 4) {
     let idx = Math.floor(Math.random() * digits.length);
     guess += digits[idx];
     digits.splice(idx, 1);
@@ -153,17 +153,19 @@ function cpuGuessHard() {
       if (j === i) continue;
       for (let k=0; k<digits.length; k++) {
         if (k === i || k === j) continue;
-        candidates.push(digits[i] + digits[j] + digits[k]);
+        for (let l=0; l<digits.length; l++) {
+          if (l === i || l === j || l === k) continue;
+          candidates.push(digits[i] + digits[j] + digits[k] + digits[l]);
+        }
       }
     }
   }
-
   // 過去履歴の「×」を反映して候補削除
   historyData.forEach(entry => {
     const guess = entry.guess;
     const hint = entry.hint;
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       const h = hint[i];
       const g = guess[i];
 
