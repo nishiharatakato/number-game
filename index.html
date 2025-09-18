@@ -7,36 +7,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>AIに勝とう！4桁数字あてゲーム</h1>
+  <h1>AIに勝とう！<br>4桁数字あてゲーム</h1>
 
   <!-- ルール表示 -->
   <div id="rules">
-  <h2>ルール</h2>
-  <ul>
-    <li>答えは「0〜9の数字4桁（重複なし）」です。</li>
-    <li>あなたとCPUが交互に数字を入力し、ヒントをもとに答えを推測します。</li>
-    <li>ヒント記号の意味：</li>
+    <h2>ルール</h2>
     <ul>
-      <li>◎ → 数字と位置が正しい</li>
-      <li>○ → 数字は正しいが位置が違う</li>
-      <li>× → 数字が含まれていない</li>
+      <li>答えは「0〜9の数字4桁（重複なし）」です。</li>
+      <li>あなたとCPUが交互に数字を入力し、ヒントをもとに答えを推測します。</li>
+      <li>ヒント記号の意味：</li>
+      <ul>
+        <li>◎ → 数字と位置が正しい</li>
+        <li>○ → 数字は正しいが位置が違う</li>
+        <li>× → 数字が含まれていない</li>
+      </ul>
+      <li>先に「◎◎◎◎」を揃えた方が勝利です。</li>
+      <li>リセットボタンで新しいゲームを開始できます。</li>
     </ul>
-    <li>先に「◎◎◎◎」を揃えた方が勝利です。</li>
-    <li>リセットボタンで新しいゲームを開始できます。</li>
-  </ul>
-</div>
-
-  <!-- ゲーム入力欄 -->
-  <input type="tel" id="guessInput" maxlength="4" pattern="[0-9]*" inputmode="numeric">
-  <button id="guessBtn">判定</button>
-  <button id="resetBtn">リセット</button>
-
-<div id="mode-select" style="margin-top:12px;">
-  <label><input type="radio" name="mode" value="easy" checked> イージー</label>
-  <label style="margin-left:10px;"><input type="radio" name="mode" value="hard"> ハード</label>
-</div>
-
-  <p id="message"></p>
+  </div>
 
   <div id="historyBox">
     <h2>履歴</h2>
@@ -48,6 +36,20 @@
       </tr>
     </table>
   </div>
+
+  <!-- ゲーム入力欄 -->
+  <div id="input-area"></div>
+    <input type="tel" id="guessInput" maxlength="4" pattern="[0-9]*" inputmode="numeric">
+    <button id="guessBtn">判定</button>
+    <button id="resetBtn">リセット</button>
+  </div>
+
+  <div id="mode-select" style="margin-top:12px;">
+    <label><input type="radio" name="mode" value="easy" checked> イージー</label>
+    <label style="margin-left:10px;"><input type="radio" name="mode" value="hard"> ハード</label>
+  </div>
+
+  <p id="message"></p>
 
   <script src="script.js"></script>
 </body>

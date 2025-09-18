@@ -38,6 +38,35 @@ h1 {
   list-style-type: disc;
 }
 
+/* 履歴リスト */
+#historyBox {
+  font-size: 20px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 380px;
+}
+
+#history {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 300px;
+}
+
+#history th, #history td {
+  border: 1px solid #333;
+  padding: 6px 10px;
+  text-align: center;
+  font-family: monospace;
+}
+
+#history th {
+  background-color: #eee;
+}
+
 /* 入力欄とボタン */
 input#guessInput {
   width: 60px;
@@ -47,6 +76,7 @@ input#guessInput {
   margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #aaa;
+  margin-top: 15px;
 }
 
 button#guessBtn {
@@ -58,6 +88,7 @@ button#guessBtn {
   color: white;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin-top: 15px;
 }
 
 button#guessBtn:hover {
@@ -73,6 +104,7 @@ button#resetBtn {
   color: white;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin-top: 15px;
 }
 
 button#resetBtn:hover {
@@ -103,26 +135,31 @@ button#resetBtn:hover {
   100% { transform: scale(1); }
 }
 
-/* 履歴リスト */
-#historyBox {
-    font-size: 20px;
-  margin-top: 20px;
-  text-align: center;
-}
+/* メディアクエリ：スマホ向け調整 */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
 
-#history {
-  margin: 0 auto;
-  border-collapse: collapse;
-  width: 300px;
-}
+  #rules, #historyBox {
+    width: 90%;
+    padding: 15px;
+  }
 
-#history th, #history td {
-  border: 1px solid #333;
-  padding: 6px 10px;
-  text-align: center;
-  font-family: monospace;
-}
+  input#guessInput {
+    width: 80px;
+    font-size: 18px;
+  }
 
-#history th {
-  background-color: #eee;
+  button#guessBtn, button#resetBtn {
+    width: 45%;
+    font-size: 16px;
+    padding: 8px 0;
+    margin-top: 5px;
+  }
+
+  #history {
+    width: 100%;
+    font-size: 14px;
+  }
 }
